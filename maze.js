@@ -19,14 +19,17 @@ window.onload = function(){
 			boundary[i].classList.add("youlose");
 		}
 		hitBoundary = true;
+		popup();
 		//boundary1.setAttribute("class", "boundary youlose");
 		//boundary1.classList.add("youlose");
 	}
 	function popup(){
 		if(hitBoundary==true){
-			alert("You Lose!");
+			document.getElementById("status").innerHTML = "<em><strong>You Lose!</strong></em>";
+			//alert("You Lose!");
 		}else{
-			alert("You Win!");
+			document.getElementById("status").innerHTML = "<em><strong>You Win!</strong></em>";
+			//alert("You Win!");
 		}
 	}
 	function reset(){
@@ -34,5 +37,6 @@ window.onload = function(){
 			boundary[i].classList.remove("youlose");
 		}
 		hitBoundary = false;
+		document.getElementById("status").innerHTML = 'Move your mouse over the "S" to begin.';
 	}
 }
