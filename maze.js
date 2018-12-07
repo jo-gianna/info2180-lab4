@@ -9,14 +9,16 @@ window.onload = function(){
 	}
 
 	let end = document.getElementById("end");
+	let start = document.getElementById("start");
 
 	end.onmouseover = popup;
+	start.onclick = reset;
 
 	function red(){
 		for (let i=0; i<boundary.length; i++){
 			boundary[i].classList.add("youlose");
-			hitBoundary = true;
 		}
+		hitBoundary = true;
 		//boundary1.setAttribute("class", "boundary youlose");
 		//boundary1.classList.add("youlose");
 	}
@@ -26,5 +28,11 @@ window.onload = function(){
 		}else{
 			alert("You Win!");
 		}
+	}
+	function reset(){
+		for (let i=0; i<boundary.length; i++){
+			boundary[i].classList.remove("youlose");
+		}
+		hitBoundary = false;
 	}
 }
