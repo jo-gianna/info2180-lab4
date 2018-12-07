@@ -14,6 +14,9 @@ window.onload = function(){
 	end.onmouseover = popup;
 	start.onclick = reset;
 
+	let maze = document.getElementById("maze");
+	maze.onmouseleave = red;
+
 	function red(){
 		for (let i=0; i<boundary.length; i++){
 			boundary[i].classList.add("youlose");
